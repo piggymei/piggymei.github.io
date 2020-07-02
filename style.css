@@ -9,7 +9,16 @@ body {
   height: 50px;
   color: #fff;
 }
-
+@media (max-width: 575.98px) {
+  .header {
+    font-size: x-small;
+  }
+}
+@media (max-width: 991.98px) {
+  .header {
+    font-size: small;
+  }
+}
 .bigFont {
   font-weight: 500;
   font-size: x-large;
@@ -18,9 +27,11 @@ body {
 
 .nav-link {
   padding: 5px;
+  color: white;
 }
 .navbar-nav-svg {
   display: inline-block;
+  fill: white;
   width: 1rem;
   height: 1rem;
   vertical-align: text-top;
@@ -30,14 +41,13 @@ h1 {
   text-align: center;
 }
 
-img {
-  padding: 20px 15px;
-  margin-left: 35%;
-  border-radius: 50%;
-  width: 320px;
-  height: 240px;
+.img1Size {
+  padding: 50px 50px 0px 50px;
+  width: 50%;
+  height: auto;
 }
-p {
+.p1 {
+  padding: 50px 20px 50px 20px;
   font-size: 20px;
 }
 nav {
