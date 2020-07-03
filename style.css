@@ -19,14 +19,21 @@ body {
     font-size: small;
   }
 }
+@media only screen and (min-width: 600px) {
+  .card {
+    width: 500px;
+    height: auto;
+  }
+}
+
 .bigFont {
   font-weight: 500;
   font-size: x-large;
   font-family: Arial;
 }
 
-.nav-link {
-  padding: 5px;
+.nav1-link {
+  padding: 9px 0px 0px 8px;
   color: white;
 }
 .navbar-nav-svg {
@@ -40,12 +47,6 @@ body {
 .textStyle1 {
   text-align: center;
   padding: 50px 20px 20px 20px;
-}
-
-.img1Size {
-  padding: 50px 50px 0px 50px;
-  width: 50%;
-  height: auto;
 }
 
 p {
