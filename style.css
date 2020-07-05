@@ -9,20 +9,35 @@ body {
   height: 50px;
   color: #fff;
 }
-@media (max-width: 575.98px) {
+@media (max-width: 600px) {
   .header {
     font-size: x-small;
   }
 }
-@media (max-width: 991.98px) {
+@media (max-width: 950px) {
   .header {
     font-size: small;
   }
+  .sidenav {
+    visibility: hidden;
+  }
+}
+.main {
+  padding-right: 0px;
 }
 @media only screen and (min-width: 600px) {
   .card {
     width: 500px;
     height: auto;
+  }
+}
+@media only screen and (min-width: 950px) {
+  .card {
+    width: 500px;
+    height: auto;
+  }
+  main {
+    padding-right: 320px;
   }
 }
 
@@ -51,4 +66,44 @@ body {
 
 p {
   padding: 10px 40px 0px 40px;
+}
+
+.sidenav {
+  display: block;
+  height: 100%;
+  width: 320px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+#sidebar {
+  background: url(https://www.jsdaima.com/kindeditor/attached/image/20181205/20181205090434_77294.png);
+  background-image: url(https://www.jsdaima.com/kindeditor/attached/image/20181205/20181205090434_77294.png);
+  background-attachment: initial;
+  background-origin: initial;
+  background-clip: initial;
+  background-color: initial;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.site-author-image {
+  display: block;
+  margin: 0 auto;
+  padding: 2px;
+  max-width: 96px;
+  height: auto;
+  border: 2px solid #333;
+}
+.site-author-name {
+  margin: 5px 0 0;
+  text-align: center;
+  color: white;
+  font-weight: normal;
 }
