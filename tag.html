@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jane Jiang</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body>
+    <div class="sidenav" id="sidebar">
+      <div>
+        <img
+          class="site-author-image"
+          src="https://pic1.zhimg.com/v2-1bc6543c1517884d55aa89d9e0ecc3cc_b.jpg"
+          alt="Jane Jiang"
+        />
+        <p class="site-author-name">Jane Jiang</p>
+      </div>
+      <div style="position: relative; margin-top: 50px;">
+        <div style="max-width: 341px; margin: 0px auto;">
+          <div style="position: relative; padding-top: 100%;">
+            <iframe
+              style="
+                background: transparent !important;
+                position: absolute;
+                left: 0px;
+                top: 0px;
+              "
+              scrolling="no"
+              frameborder="0"
+              allowtransparency="true"
+              width="100%"
+              height="100%"
+              src="//rf.revolvermaps.com/w/6/a/c2.php?i=5emw6lctvwn&amp;m=7&amp;c=e63100&amp;cr1=ffffff&amp;sx=0"
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <main id="homemain">
+      <header class="header">
+        <div class="container">
+          <div class="row">
+            <div class="col-4 bigFont">Jane Jiang</div>
+            <div
+              class="col-1"
+              style="display: flex; justify-content: flex-end;"
+            >
+              <i
+                class="menu-item-icon fa fa-fw fa-home"
+                style="padding-top: 12px;"
+              ></i>
+
+              <a class="nav1-link" href="index.html"> Home</a>
+            </div>
+
+            <div class="col-1" style="display: flex; justify-content: center;">
+              <i
+                class="menu-item-icon fa fa-fw fa-user"
+                style="padding-top: 12px;"
+              ></i>
+              <a class="nav1-link" href="about.html">About</a>
+            </div>
+            <div class="col-1" style="display: flex; justify-content: center;">
+              <i
+                class="menu-item-icon fa fa-fw fa-tags"
+                style="padding-top: 12px;"
+              ></i>
+              <a class="nav1-link" href="#Tags">Tags</a>
+            </div>
+            <div
+              class="col-1"
+              style="display: flex; justify-content: flex-start;"
+            >
+              <i
+                class="menu-item-icon fa fa-fw fa-archive"
+                style="padding-top: 12px;"
+              ></i>
+              <a class="nav1-link" href="wishlist.html">Archives</a>
+            </div>
+            <div
+              class="col-3"
+              style="display: flex; justify-content: flex-end;"
+            >
+              <button id="logout">Logout</button>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <div id="movielist">
+        <h1 style="display: flex; justify-content: center; padding-top: 30px;">
+          Movies to Watch
+        </h1>
+        <p
+          style="
+            display: flex;
+            justify-content: center;
+            padding-top: 10px;
+            padding-bottom: 30px;
+          "
+        >
+          Found fun movies to watch in your free time? Use the search bar below
+          to add them to your bucket list
+        </p>
+      </div>
+
+      <div
+        style="
+          display: flex;
+          justify-content: center;
+          padding-top: 10px;
+          padding-bottom: 30px;
+        "
+      >
+        <form id="form">
+          <input
+            type="text"
+            name="search"
+            placeholder="Enter keyword"
+            id="search"
+          />
+          <input
+            type="button"
+            type="submit"
+            value="Create Search Button"
+            id="submit_btn"
+          />
+        </form>
+      </div>
+
+      <div
+        id="search_btn_container"
+        style="display: flex; justify-content: center;"
+      ></div>
+
+      <div
+        id="card_container"
+        class="container"
+        style="display: flex; justify-content: center; flex-wrap: wrap;"
+      ></div>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

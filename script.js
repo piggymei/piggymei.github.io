@@ -13,18 +13,32 @@ function submitForm(event) {
   if (wishListContainer.children.length === 0) {
     document.querySelector("#title").innerHTML = "My WishList";
   }
-  createCard();
+  let des1 = document.querySelector("#dest").innerText;
+  let loc = document.querySelector("#loc").innerText;
+  let pho = document.querySelector("#pho").innerText;
+  let desc = document.querySelector("#desc").value;
+  let card_div = createCard(des1, loc, pho, desc);
+  document.querySelector("#wish_container").append(card_div);
   event.target.elements[0].value = "";
   event.target.elements[1].value = "";
   event.target.elements[2].value = "";
   event.target.elements[3].value = "";
 }
 
-function createCard() {
-  let dest = document.getElementById("dest").value;
-  let loc = document.getElementById("loc").value;
-  let pho = document.getElementById("pho").value;
-  let desc = document.getElementById("desc").value;
+function createCard(des1, lo, ph, des2) {
+  // let card = document.createElement("div");
+  // card.className = "card";
+  // let title = document.createElement("h5");
+  // title.innerText = des1;
+  // title.setAttribute("class", "card-title");
+  // card.appendChild(title);
+  // document.querySelector("#card_container").append(card);
+
+  let desc = des2;
+  let loc = lo;
+  let pho = ph;
+  let dest = des1;
+
   let div1 = document.createElement("div");
   let div2 = document.createElement("div");
   let img = document.createElement("img");
@@ -63,10 +77,7 @@ function createCard() {
   button2.textContent = "Remove";
   button2.style.backgroundColor = "pink";
   buttonsContainer.setAttribute("class", "buttons_container");
-  // button1.style.paddingBottom = "1rem";
-  // button1.style.marginLeft = "22rem";
-  // button1.style.paddingBottom = "1rem";
-  // button1.style.marginLeft = "2rem";
+
   div2.appendChild(head5);
   div2.appendChild(para2);
   div2.appendChild(para);
@@ -76,8 +87,8 @@ function createCard() {
 
   div1.appendChild(img);
   div1.appendChild(div2);
-
-  document.querySelector("#wish_container").appendChild(div1);
+  return div1;
+  document.querySelector("#card_container").append(div1);
 }
 
 function edit(event) {
@@ -114,3 +125,52 @@ function removeDestination(event) {
   var card = cardBody.parentElement;
   card.remove();
 }
+
+const clickButton = (e) => {
+  let searchKeyword = e.target.innerHTML;
+  let sUrl = "http://www.omdbapi.com/?&apikey=a92d1656&s=";
+  let searchUrl = sUrl.concat(searchKeyword);
+
+  fetch(searchUrl)
+    .then((response) => response.json())
+    .then((data) => processData(data.Search));
+};
+
+document.getElementById("submit_btn").addEventListener("click", (e) => {
+  e.preventDefault();
+
+  let searchKeyword = document.getElementById("search").value;
+
+  let btn = document.createElement("button");
+
+  btn.innerHTML = searchKeyword;
+
+  document.getElementById("search").value = "";
+
+  document.getElementById("search_btn_container").appendChild(btn);
+
+  btn.addEventListener("click", clickButton);
+});
+function processData(movieList) {
+  //console.log(movieList);
+  movieList.forEach((element) => {
+    console.log(element);
+    let div1 = createCard(
+      element.Title,
+      element.Year,
+      element.Poster,
+      element.Type
+    );
+    document.querySelector("#card_container").append(div1);
+  });
+}
+
+// function clickButton(e) {
+//   let searchKeyword = e.innerHTML;
+//   let sUrl = "http://www.omdbapi.com/?&apikey=a92d1656&s=";
+//   let searchUrl = sUrl.concat(searchKeyword);
+
+//   fetch(searchUrl)
+//     .then((response) => response.json())
+//     .then((data) => console.log(data.Search));
+// }
