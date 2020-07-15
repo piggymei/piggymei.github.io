@@ -128,7 +128,7 @@ function removeDestination(event) {
 
 const clickButton = (e) => {
   let searchKeyword = e.target.innerHTML;
-  let sUrl = "http://www.omdbapi.com/?&apikey=a92d1656&s=";
+  let sUrl = "https://www.omdbapi.com/?&apikey=a92d1656&s=";
   let searchUrl = sUrl.concat(searchKeyword);
 
   fetch(searchUrl)
